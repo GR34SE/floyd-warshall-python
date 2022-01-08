@@ -1,5 +1,7 @@
 # floyd-warshall-python
 
+# Example 1
+
 ## Input
 | City:     | Poznań | Wrocław | Bydgoszcz  | Łódź | Warszawa | Kraków | Katowice |
 | --------- | ------ | ------- | ---------- | ---- | ---------| ------ | -------- |
@@ -12,7 +14,7 @@
 | Katowice  | ∞      | 200     | ∞          | 200  | ∞        | 80     | 0        |
 
 ## Visualization
-![Graph visualization](graph.png)
+![Graph 1 visualization](graphs/graph_1.png)
 
 Source: https://math.uni.lodz.pl/~lindner
 
@@ -26,3 +28,17 @@ Source: https://math.uni.lodz.pl/~lindner
 | Warszawa  | 360    | 360     | 300        | 140  | 0        | 290    | 340      |
 | Kraków    | 460    | 280     | 500        | 280  | 290      | 0      | 80       |
 | Katowice  | 380    | 200     | 420        | 200  | 340      | 80     | 0        |
+
+# Example 2
+
+## Input, Visualization
+![Graph 2 visualization](graphs/graph_2.png)
+
+## Output
+
+| #   | v1  | v2  | v3  | v4  |
+|-----|-----|-----|-----|-----|
+| v1  | 0   | -1  | -2  | 0   |   
+| v2  | 4   | 0   | 2   | 4   |  
+| v3  | 5   | 1   | 0   | 2   | 
+| v4  | 3   | -1  | 1   | 0   |

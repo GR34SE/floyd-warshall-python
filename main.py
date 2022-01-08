@@ -26,9 +26,12 @@ def get_results_matrix(vertices_entries):
 if __name__ == '__main__':
     infinity = float("inf")
 
+    # example 1
+    print("Example 1:")
+
     # matrix representing distances between adjacent cities (vertices pairs)
     # infinity is used to represent the unknown distances on init
-    # @see graph.png
+    # @see /graphs/graph_1.png
     polish_major_cities_distances_matrix = [
         [0, 180, 140, 220, infinity, infinity, infinity],  # Poznań
         [180, 0, infinity, 220, infinity, infinity, 200],  # Wrocław
@@ -39,12 +42,33 @@ if __name__ == '__main__':
         [infinity, 200, infinity, 200, infinity, 80, 0]  # Katowice
     ]
 
-    results = get_results_matrix(polish_major_cities_distances_matrix)
+    example_1_results = get_results_matrix(polish_major_cities_distances_matrix)
 
     polish_major_cities_labels = ["Poznań", "Wrocław", "Bydgoszcz", "Łódź", "Warszawa", "Kraków", "Katowice"]
-    table = PrettyTable(["City:", *polish_major_cities_labels])
+    example_1_table = PrettyTable(["City:", *polish_major_cities_labels])
 
     for index in range(len(polish_major_cities_labels)):
-        table.add_row([polish_major_cities_labels[index], *results[index]])
+        example_1_table.add_row([polish_major_cities_labels[index], *example_1_results[index]])
 
-    print(table)
+    print(example_1_table)
+
+    # example 2
+    print("Example 2:")
+
+    # @see /graphs/graph_2.png
+    numbers_matrix = [
+        [0, infinity, -2, infinity],
+        [4, 0, 3, infinity],
+        [infinity, infinity, 0, 2],
+        [infinity, -1, infinity, 0]
+    ]
+
+    example_2_results = get_results_matrix(numbers_matrix)
+
+    vertices_labels = list(map(lambda i: "v" + str(i), range(len(numbers_matrix))))
+    example_2_table = PrettyTable(["#", *vertices_labels])
+
+    for index in range(len(example_2_results)):
+        example_2_table.add_row([vertices_labels[index], *example_2_results[index]])
+
+    print(example_2_table)
